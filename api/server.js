@@ -22,7 +22,7 @@ app.post('/course', (req,res)=>{
     const objForSchedule = {startDate: new Date(req.body.startDate),
                             numOfClasses:req.body.numOfClasses,
                             daysSelected:req.body.daysSelected};
-
+    console.log(`Obj we pass to schedule ${JSON.stringify(objForSchedule)}`);
     OurSchedule(objForSchedule);
     res.send({"a":"1"})
 }
