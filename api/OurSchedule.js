@@ -9,7 +9,8 @@ function OurSchedule({startDate, numOfClasses, daysSelected}){
     const daysSelected = [0,1,2];
     */
 
-
+    console.log(`Days Selected ${daysSelected}`);
+    console.log(`num of classes - ${numOfClasses}`)
     const startDay = startDate.getDay();
 
          
@@ -26,23 +27,29 @@ function OurSchedule({startDate, numOfClasses, daysSelected}){
         nextClassDay:''
     };
 
+    console.log(`Array Dates Earlier ${arrNextDates}`);
+    console.log(`Count Earlier ${count}`);
+    console.log(`length of array.. days selected.. ${daysSelected.length}`);
         if(daysSelected.length>0){
         while(count<numOfClasses){
-    
-            var  maybeNextDate = startDate.addDays(i++);
+            i++
+            var  maybeNextDate = startDate.addDays(i);
             var  maybeNextDateDay = maybeNextDate.getDay();
                 if(daysSelected.includes(maybeNextDateDay)){
                    objTemp.nextClassDate = maybeNextDate;
                    objTemp.nextClassDay  = maybeNextDateDay;
+                   console.log(objTemp);
                    arrNextDates.push(objTemp);
                    count++;
                 }
-                console.log(arrNextDates);
-                console.log(count);
+                
                
-        }      
+        } 
+        console.log(`Array Dates after processing ${arrNextDates}`);
+        console.log(`Count after processing ${count}`);         
     }       
         
+   
 
     
 }
