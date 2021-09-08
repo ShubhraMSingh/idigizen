@@ -18,7 +18,12 @@ function Instructor(){
         []
     ); 
 
-    
+    let daysSelectedNum = 0; 
+
+    const selectDays = (daySelectedNum) => {
+        setDaysSelected(prevDays=>{return [...prevDays, daySelectedNum]});
+   };
+
 
     const handleChange = (e) =>{
         const {name,value} = e.target;
@@ -57,31 +62,31 @@ function Instructor(){
         const checked = e.target.checked;
         const checkedValue = e.target.value;
         const checkedName = e.target.name;
-        const daysSelectedNum = [];          
+                
                 switch(checkedValue){
                     case "Mon":
-                        daysSelectedNum.push(0);
+                        daysSelectedNum=0;
                         break;
                     case "Tues":
-                        daysSelectedNum.push(1);
+                        daysSelectedNum=1;
                         break;
                     case "Wed":
-                        daysSelectedNum.push(2);
+                        daysSelectedNum=2;
                         break;
                     case "Thurs":
-                        daysSelectedNum.push(3);
+                        daysSelectedNum=3;
                         break;
                     case "Fri":
-                        daysSelectedNum.push(4);
+                        daysSelectedNum=4;
                         break;
                     case "Sat":
-                        daysSelectedNum.push(5);
+                        daysSelectedNum=5;
                         break;
                     case "Sun":
-                        daysSelectedNum.push(6);
+                        daysSelectedNum=6;
                     default:break;
                 }  
-                setDaysSelected(daysSelectedNum);
+                selectDays(daysSelectedNum);
                 
                 console.log(daysSelectedNum);
     }
