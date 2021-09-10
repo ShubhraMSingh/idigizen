@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import "./css/CourseDetails.css"
 
 function CourseDetails({addDetail}){
     
@@ -33,21 +33,27 @@ const handleClick = (e) => {
             <h2>Add Course Details...Day Wise</h2>
             <form>
             {formValues.map((element,index)=>(
-                   <div key={index}>
-                       <input
+                   <div class="row" key={index}>
+                       <div class="col-lg-3">
+                       <input class="form-control"
                         onChange = {handleChange}
                         name="day"
                         placeholder="Day..."
 
                         />
-                        <textarea
+                        </div>
+                        <div class="col-lg-6">
+                        <textarea class="form-control"
                          onChange = {handleChange}
                          name="content"
                          placeholder="Add content(topics for the class)..."
-                         rows="3"
+                         rows="1"
                 
                         />
-                        <button onClick = {handleClick}>Add detail</button>
+                        </div>
+                        <div class="col-lg-3">
+                        <button  class="btn btn-outline-primary" onClick = {handleClick}>Add detail</button>
+                        </div>
                     </div>
             ))}
             </form>

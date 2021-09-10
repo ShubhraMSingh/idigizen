@@ -55,50 +55,63 @@ function InstructorForm({course, description, daysSelected, onCreateCourse, onAd
     const arrDays=['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
 
     return (
-        <div>
+        <div class="card card-body createcourseclass">
             <form>
                 
-                <input 
+               <div class="form-group fieldgroup">
+                <label for="title"> Course Title </label>  
+                <input class="form-control"
                 name="title" 
-                placeholder="Title" 
+                placeholder="Enter the course title here... " 
                 onChange= {onCreateCourse}
                 value={title}/>
-               
-                <textarea
+               </div>
+               <div class="form-group fieldgroup">
+               <label for="description"> Course Description </label> 
+                <textarea class="form-control"
                 name="description"
                 placeholder="Describe your course..." 
                 rows="3"
                 pattern="^(?:\b\w+\b[\s\r\n]*){1,200}$"
                 onChange= {onAddDescription} 
                 value={description} />
-
-                <input 
+                </div>
+                <div class="form-group fieldgroup">
+                <label for="numOfClasses"> Number Of Classes </label> 
+                <input class="form-control"
                 name="numOfClasses" 
-                placeholder="Number Of Classes"
+                placeholder="Enter total number of classes for the course"
                 onChange= {onCreateCourse} 
                 value={numOfClasses} />
-
-                <input 
+                </div>
+                <div class="form-group fieldgroup">
+                <label for="startDate"> Start Date of the course </label> 
+                <input class="form-control"
                 name="startDate" 
                 type="date" 
                 id="start" 
                 onChange= {onCreateCourse} 
                 value={startDate} />
-
+                </div>
              
+
+                <div class="form-group  fieldgroup">
+                <label>Select days of the week on which you will conduct the classes </label> 
                 <div className="weekDays-selector">
                    {arrDays.map((day,i)=>{return (
                        <Checkbox name={day} type="checkbox" class="weekday" value={day} 
                        onChange = {e=>onSelectDays(e)} />
                        )})}
                 </div>
-             
+                </div>
                 
                 <div><CourseDetails addDetail = {addDetail}/></div>   
             
               
-                <button type="submit" onClick={handleSubmit}>Submit</button>
-                   
+                
+                <div class="row">
+                    <button class="col-12 btn btn-primary"type="submit" onClick={handleSubmit}>Submit</button>
+                </div>   
             </form>
         </div>
      

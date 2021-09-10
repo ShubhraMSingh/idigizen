@@ -96,7 +96,7 @@ function Instructor(){
         <div className="InstructorPage">
             <div className = "item PublishedCourses">
                 <h1>Your published courses...</h1>
-                <ul>
+                <ul class="CourseList card card-body">
                     <li> Advanced Javascript        </li>
                     <li> React Concepts             </li>
                     <li> Node Design Patterns       </li>
@@ -105,7 +105,7 @@ function Instructor(){
             
             <div className="item CreateForm">
                 <h1> Create a new Course...</h1>
-               <InstructorForm 
+               <InstructorForm className="NewCourse"
                course={course}
                description={description}
                daysSelected = {daysSelected}

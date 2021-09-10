@@ -11,18 +11,39 @@
 
 .PublishedCourses{
     
-    padding:10% 20% 0 30%;
+    padding:10% 0%;
     grid-row:1/2;
     grid-column: 1/2;
     font-size: larger;
+    width:100%
   }
 
 .CreateForm{
-    padding:10% 30% 0 30%;
+
+
+    padding:10% 0%; 
     grid-row:1/2;
     grid-column: 2/3;
+    width:100%;
+
     
      
 }
     
+h1 {
+    font-family:"Sacramento", cursive; 
+    text-align: center;
+    padding:10% auto
+
+}
+.NewCourse{
+    padding:10% 2%;
+    height:80vh;
+    text-align: left;
+}
+
+.CourseList{
+    padding:10% 2%;
+    height: 80vh;
+}
     
