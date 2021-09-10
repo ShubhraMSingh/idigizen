@@ -33,6 +33,7 @@ app.post('/course', (req,res)=>{
     /*shubh    addCourse(req.body);    */
     const Course = mongoose.model('courses');
     const newCourse = req.body;
+    console.log(req.body);
     new Course(newCourse)
     .save()
     .then(course=>{res.redirect('/courses')})

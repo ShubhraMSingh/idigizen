@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 
+const subSchemaCourseDetail = new mongoose.Schema({
+    day:{type:String, required:true},
+    content:{type:String, required:true}
+  });
 
 const CourseSchema = new mongoose.Schema({
     
@@ -23,6 +27,11 @@ const CourseSchema = new mongoose.Schema({
     },
     daysSelected:{
         type:[Number],
+        required:true
+
+    },
+    details:{
+        type:[subSchemaCourseDetail],
         required:true
 
     },
