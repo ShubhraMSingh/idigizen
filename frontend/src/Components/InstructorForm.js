@@ -39,8 +39,7 @@ function InstructorForm({course, description, daysSelected, onCreateCourse, onAd
              body: JSONToPost};
         
         fetch('course', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
+        .then(response => console.log(response));
 
      }
      

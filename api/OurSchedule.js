@@ -45,8 +45,7 @@ function OurSchedule({startDate, numOfClasses, daysSelected}){
                 
                
         } 
-        console.log(`Array Dates after processing ${arrNextDates}`);
-        console.log(`Count after processing ${count}`);         
+       
     }       
         
    
